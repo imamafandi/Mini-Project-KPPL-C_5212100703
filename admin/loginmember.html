@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Login | Sistem Informasi Apotek </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	
+    <!-- CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+	<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <style type="text/css">
+
+      /* Sticky footer styles
+      -------------------------------------------------- */
+
+      html,
+      body {
+		height: 100%;
+        /* The html and body elements cannot have any padding or margin. */
+		
+		background: url(assets/img/bg.jpg) no-repeat;
+		background-size: 100% 100%;
+		background-position: center top;
+	  }
+	  
+      /* Wrapper for page content to push down footer */
+      #wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -60px;
+      }
+		
+      /* Set the fixed height of the footer here */
+      #push,
+      #footer {
+		  height: 30px;
+      }
+	  .logo{
+		width : 290px;
+		height : 290px;
+	  }
+	  .logo-navbar{
+		width : 25px;
+		height : 25px;
+	  }
+      /* Lastly, apply responsive CSS fixes as necessary */
+      @media (max-width: 767px) {
+        #footer {
+          margin-left: -20px;
+          margin-right: -20px;
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+
+      /* Custom page CSS
+      -------------------------------------------------- */
+      /* Not required for template or sticky footer method. */
+
+      #wrap > .container {
+        padding-top: 60px;
+      }
+      .container .credit {
+        margin: 20px 0;
+      }
+      code {
+        font-size: 80%;
+      }
+	  
+    </style>
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+	
+	 <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+	<script src="assets/js/jquery.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+
+
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+                    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="assets/ico/favicon-apotek.png">
+  </head>
+
+  <body>
+
+
+    <!-- Part 1: Wrap all page content here -->
+    <!--mulai-->
+	 <div class="container-fluid">
+    <!-- Modal -->
+    <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Login</h3>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal" name="login" action="php/login.php" method="POST">
+                <div class="control-group">
+                    <label class="control-label" for="username">Username</label>
+                    <div class="controls">
+                        <input type="text" id="username" placeholder="Username" name="username">
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label" for="password">Password</label>
+                    <div class="controls">
+                        <input type="password" id="password" placeholder="Password" name="password">
+                    </div>
+                </div>
+                <center>
+                    <!--<button type="submit" name="submit1" value="LupaPassword" class="btn btn-info">Lupa Password</button>-->
+                    <button type="submit" name="submit" value="login" class="btn btn-primary">Login</button>
+                </center>
+            </form>
+        </div>
+    </div>
+
+    <div id="register" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+            <h3 id="myModalLabel">Register</h3>
+        </div>
+        <div class="modal-body">
+            <form class="form-horizontal" name="login" action="php/register.php" method="POST">
+                <!-- Nama -->
+                <div class="control-group">
+                    <label class="control-label" for="namaLengkap"> Nama </label>
+                    <div class="controls">
+                        <input class="input-xlarge" type="text" id="namaLengkap" placeholder="username" name="inputNama" required>
+                    </div>
+                </div>
+                                
+				<!-- Alamat -->
+                <div class="control-group">
+                    <label class="control-label" for="inputAlamatKos"> Alamat </label>
+                    <div class="controls">
+                        <textarea class="input-xlarge" rows="4" id="inputAlamatKos" name="inputAlamat" placeholder="Alamat" required></textarea>
+                    </div>
+                </div>
+                                
+                <!-- Email -->
+                <div class="control-group">
+                    <label class="control-label" for="inputEmail"> Email </label>
+                    <div class="controls">
+                        <input class="input-xlarge" type="email" id="inputEmail" name="inputEmail" placeholder="youremail@email.com" required>
+                    </div>
+                </div>
+                
+                <div class="control-group">
+                    <label class="control-label" for="password">Password</label>
+                    <div class="controls">
+                        <input class="input-xlarge" type="password" id="password" placeholder="Password" name="password" required>
+                    </div>
+                </div>
+                
+                <center>
+                    <button type="submit" name="submit" value="register" class="btn btn-success">Register</button>
+                </center>
+            </form>
+        </div>
+    </div>
+
+    <div class="well" style="max-width: 600px; margin: 0 auto 10px;">
+        <center><h2>SISTEM INFORMASI APOTEK</h2></center>
+        <center><h1>(SIAp)</h1>
+            <img src="assets/img/apotek.png"></center>
+        <br>
+        <button type="button" class="btn btn-large btn-block btn-primary" data-toggle="modal" data-target="#myModal">Login</button>
+        <br>
+        <center><p>Belum memiliki akun? Silahkan register disini!</p></center>
+        <button type="button" class="btn btn-large btn-block btn-success" data-toggle="modal" data-target="#register">Register</button>
+    </div>
+</div>
+	
+	<!--selesai-->
+
+    <div id="footer">
+      <div class="container">
+        <br><br>
+		<!--
+		<p class="text-right"> <a href="http://www.facebook.com" target="_blank"> <img src="../assets/img/logo-fb.png" width="30px" height="30px" class="img-rounded"> SIAp &nbsp</a> 
+		<a href="http://www.twitter.com" target="_blank"> <img src="../assets/img/logo-twitter.png" width="30px" height="30px" class="img-rounded"> @siapsurabaya </a> </p>
+		-->
+		<div class="span11">
+			<center><h5 style="background-color: #e3e3e3">Copyright &copy; Konstruksi dan Perancanbgan Perangkat Lunak C | 5212100703</h5></center>
+		</div>
+		
+		
+      </div>
+		
+    </div>
+
+
+  </body>
+</html>
